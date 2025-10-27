@@ -17,19 +17,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'john.doe@example.com',
-      link: 'mailto:john.doe@example.com',
+      value: 'mohammedsahal1243@gmail.com',
+      link: 'mailto:mohammedsahal1243@gmail.com',
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+91 7306093151',
+      link: 'tel:+917306093151',
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Kerala, India',
       link: '#',
     },
   ]

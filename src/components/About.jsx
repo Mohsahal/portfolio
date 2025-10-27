@@ -65,11 +65,25 @@ const About = () => {
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">About Me</h2>
           <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
-          <p className="text-xl text-primary-200 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer with expertise in building modern web applications.
-            With a strong foundation in both frontend and backend technologies, I create
-            seamless digital experiences that users love.
-          </p>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <p className="text-xl md:text-2xl text-primary-100 font-semibold leading-relaxed">
+              Full Stack Developer & Cybersecurity Enthusiast
+            </p>
+            <p className="text-lg text-primary-200 leading-relaxed">
+              Currently pursuing <span className="text-primary-400 font-semibold">B.E in Information Science at VTU</span> with a CGPA of <span className="text-primary-400 font-semibold">7.02</span>. 
+              I specialize in designing, building, and securing end-to-end web applications using modern technologies like 
+              <span className="text-primary-400 font-semibold"> React, Node.js, and the MERN stack</span>.
+            </p>
+            <p className="text-lg text-primary-200 leading-relaxed">
+              With expertise in <span className="text-primary-400 font-semibold">web vulnerability assessment, penetration testing, and secure coding practices</span>, 
+              I ensure robust application defense. Currently gaining hands-on experience as a 
+              <span className="text-primary-400 font-semibold"> Cyber Security Intern at Interns Forge, Bengaluru</span>, 
+              working on real-world security challenges and solutions.
+            </p>
+            <p className="text-lg text-primary-300 italic">
+              Passionate about writing clean, efficient code and delivering secure, user-friendly solutions.
+            </p>
+          </div>
         </motion.div>
 
         {/* Features Grid */}
@@ -100,10 +114,10 @@ const About = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { number: '50+', label: 'Projects Completed' },
-            { number: '5+', label: 'Years Experience' },
-            { number: '30+', label: 'Happy Clients' },
-            { number: '100%', label: 'Satisfaction' },
+            { number: '10+', label: 'Projects Completed' },
+            { number: '2+', label: 'Years Learning' },
+            { number: '7.02', label: 'CGPA' },
+            { number: '100%', label: 'Dedication' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

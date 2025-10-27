@@ -13,79 +13,70 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.',
+      title: 'Career Companion System',
+      description: 'Full-stack web application for job seekers using machine learning to recommend personalized career paths and job opportunities based on user profiles and preferences.',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+      tags: ['React', 'Node.js', 'ML', 'MongoDB'],
+      category: 'Full Stack',
+      github: 'https://github.com/Mohsahal',
+      live: '#',
+    },
+    {
+      title: 'E-Learning Platform',
+      description: 'Full-featured MERN stack application with secure authentication, course browsing, video lessons, live classes, certificate generation, progress tracking, and integrated payment gateway. Deployed on Render.',
+      image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
+      tags: ['MERN', 'Payment Gateway', 'WebRTC', 'Render'],
+      category: 'Full Stack',
+      github: 'https://github.com/Mohsahal',
+      live: '#',
+    },
+    {
+      title: 'E-commerce Web Application',
+      description: 'MERN stack application with user authentication, product browsing, shopping cart, and basic checkout system. Complete online shopping experience.',
       image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      tags: ['MongoDB', 'Express', 'React', 'Node.js'],
       category: 'Full Stack',
-      github: '#',
+      github: 'https://github.com/Mohsahal',
       live: '#',
     },
     {
-      title: 'AI Chat Application',
-      description: 'Real-time chat application with AI-powered responses using OpenAI API and WebSocket connections.',
-      image: 'https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&h=600&fit=crop',
-      tags: ['React', 'Python', 'FastAPI', 'OpenAI'],
-      category: 'Full Stack',
-      github: '#',
+      title: 'Packet Analysis Tool',
+      description: 'Real-time network monitoring and traffic inspection tool to identify suspicious patterns and malicious activities. Utilizes network packet capture and analysis techniques for enhanced cybersecurity visibility.',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+      tags: ['Python', 'Wireshark', 'Network Security'],
+      category: 'Cyber Security',
+      github: 'https://github.com/Mohsahal',
       live: '#',
     },
     {
-      title: 'Portfolio Dashboard',
-      description: 'Interactive dashboard for tracking cryptocurrency portfolio with real-time price updates and analytics.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      tags: ['Vue.js', 'D3.js', 'Firebase'],
-      category: 'Frontend',
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'Task Management API',
-      description: 'RESTful API for task management with authentication, authorization, and real-time notifications.',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop',
-      tags: ['Node.js', 'Express', 'PostgreSQL', 'Redis'],
-      category: 'Backend',
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'Social Media App',
-      description: 'Social networking platform with posts, comments, likes, and real-time messaging features.',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-      tags: ['React Native', 'Firebase', 'Redux'],
-      category: 'Mobile',
-      github: '#',
-      live: '#',
-    },
-    {
-      title: 'Weather Forecast App',
-      description: 'Beautiful weather application with 7-day forecast, interactive maps, and location-based alerts.',
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop',
-      tags: ['React', 'TypeScript', 'Weather API'],
-      category: 'Frontend',
-      github: '#',
+      title: 'VAPT Project',
+      description: 'Vulnerability Assessment and Penetration Testing project focused on assessing system security through ethical hacking methodologies. Includes scanning, exploitation, and remediation phases.',
+      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
+      tags: ['Metasploit', 'Burp Suite', 'Nmap', 'Nessus'],
+      category: 'Cyber Security',
+      github: 'https://github.com/Mohsahal',
       live: '#',
     },
   ]
 
-  const categories = ['All', ...new Set(projects.map(p => p.category))]
+  const categories = ['All', 'Full Stack', 'Cyber Security']
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter)
 
   useEffect(() => {
-    const cards = sectionRef.current.querySelectorAll('.project-card')
+    const cards = sectionRef.current?.querySelectorAll('.project-card')
+    if (!cards || cards.length === 0) return
     
+    // Reset cards first
+    gsap.set(cards, { y: 0, opacity: 1 })
+    
+    // Then animate
     gsap.from(cards, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top center',
-        end: 'bottom center',
-        toggleActions: 'play none none reverse',
-      },
-      y: 100,
+      y: 20,
       opacity: 0,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: 'power3.out',
+      stagger: 0.03,
+      duration: 0.25,
+      ease: 'power1.out',
+      clearProps: 'all'
     })
   }, [filter])
 
@@ -96,9 +87,9 @@ const Projects = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.25 }}
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Featured Projects</h2>
@@ -110,9 +101,9 @@ const Projects = () => {
 
         {/* Filter Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.2 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           {categories.map((category) => (
@@ -157,13 +148,13 @@ const ProjectCard = ({ project, index }) => {
       const centerX = rect.width / 2
       const centerY = rect.height / 2
       
-      const rotateX = (y - centerY) / 10
-      const rotateY = (centerX - x) / 10
+      const rotateX = (y - centerY) / 15
+      const rotateY = (centerX - x) / 15
       
       gsap.to(card, {
         rotateX: rotateX,
         rotateY: rotateY,
-        duration: 0.5,
+        duration: 0.3,
         ease: 'power2.out',
       })
     }
@@ -172,7 +163,7 @@ const ProjectCard = ({ project, index }) => {
       gsap.to(card, {
         rotateX: 0,
         rotateY: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: 'power2.out',
       })
     }
@@ -189,9 +180,9 @@ const ProjectCard = ({ project, index }) => {
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, scale: 0.8 }}
+      initial={{ opacity: 0, scale: 0.98 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
+      transition={{ delay: index * 0.02, duration: 0.2 }}
       className="project-card group relative bg-dark-50 rounded-xl overflow-hidden border border-primary-500/20 hover:border-primary-500/50 transition-all duration-300"
       style={{ transformStyle: 'preserve-3d' }}
     >

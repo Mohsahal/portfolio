@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Mohsahal', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/mohammedsahalpk', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#contact', label: 'Email' },
+    { icon: Mail, href: 'mailto:mohammedsahal1243@gmail.com', label: 'Email' },
   ]
 
   const quickLinks = [
@@ -96,7 +96,7 @@ const Footer = () => {
             className="text-primary-300 flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
-            Made with <Heart className="text-primary-500 fill-current" size={16} /> by John Doe
+            Made with <Heart className="text-primary-500 fill-current" size={16} /> by Mohammed Sahal PK
           </motion.p>
         </div>
       </div>
