@@ -159,7 +159,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}
-        className="absolute bottom-2 md:bottom-2 lg:bottom-2 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-2 md:bottom-4 lg:bottom-6 xl:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
       >
         <motion.div
           animate={{ y: [0, 15, 0] }}

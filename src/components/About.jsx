@@ -66,9 +66,9 @@ const About = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-gradient">About Me</h2>
           <div className="w-20 sm:w-24 h-1 bg-primary-500 mx-auto mb-6 md:mb-8"></div>
           <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
-            <p className="text-lg sm:text-xl md:text-2xl text-primary-100 font-semibold leading-relaxed">
+            {/* <p className="text-lg sm:text-xl md:text-2xl text-primary-100 font-semibold leading-relaxed">
               Full Stack Developer & Cybersecurity Enthusiast
-            </p>
+            </p> */}
             <p className="text-sm sm:text-base md:text-lg text-primary-200 leading-relaxed">
               Currently pursuing <span className="text-primary-400 font-semibold">B.E in Information Science at VTU</span> with a CGPA of <span className="text-primary-400 font-semibold">7.02</span>. 
               I specialize in designing, building, and securing end-to-end web applications using modern technologies like 

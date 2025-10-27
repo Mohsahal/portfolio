@@ -45,13 +45,29 @@ const Contact = () => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    console.log('Form submitted:', formData)
-    setFormData({ name: '', email: '', message: '' })
-    setIsSubmitting(false)
-    alert('Message sent successfully!')
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      const data = await response.json()
+      
+      if (response.ok && data.success) {
+        setFormData({ name: '', email: '', message: '' })
+        alert('✅ Message sent successfully! I will get back to you soon.')
+      } else {
+        alert('❌ ' + (data.message || 'Failed to send message. Please try again.'))
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('❌ Failed to send message. Please make sure the server is running.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   // React Spring animation for form
