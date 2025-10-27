@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Skills = () => {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const isInView = useInView(sectionRef, { once: false, margin: '-100px' })
 
   const skills = [
     { name: 'React', level: 90, category: 'Web Development', color: '#61DAFB' },
@@ -54,7 +54,7 @@ const Skills = () => {
         scrollTrigger: {
           trigger: card,
           start: 'top 85%',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play none play none',
         },
         y: 50,
         opacity: 0,
@@ -67,10 +67,10 @@ const Skills = () => {
   }, [])
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 relative overflow-hidden">
+    <section id="skills" ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-dark-50 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-primary-500 rounded-full blur-3xl opacity-10"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-600 rounded-full blur-3xl opacity-10"></div>
+      <div className="absolute top-10 left-5 md:top-20 md:left-10 w-64 h-64 md:w-96 md:h-96 bg-primary-500 rounded-full blur-3xl opacity-10"></div>
+      <div className="absolute bottom-10 right-5 md:bottom-20 md:right-10 w-64 h-64 md:w-96 md:h-96 bg-primary-600 rounded-full blur-3xl opacity-10"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -78,11 +78,11 @@ const Skills = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-gradient">Skills & Expertise</h2>
-          <div className="w-24 h-1 bg-primary-500 mx-auto mb-8"></div>
-          <p className="text-xl text-primary-200 max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-gradient">Skills & Expertise</h2>
+          <div className="w-20 sm:w-24 h-1 bg-primary-500 mx-auto mb-6 md:mb-8"></div>
+          <p className="text-base sm:text-lg md:text-xl text-primary-200 max-w-3xl mx-auto">
             Proficient in modern technologies and frameworks
           </p>
         </motion.div>
@@ -100,11 +100,11 @@ const Skills = () => {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: catIndex * 0.2, duration: 0.8 }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <CategoryIcon className="w-7 h-7 text-primary-500" />
-                  <h3 className="text-2xl font-bold text-primary-400">{category}</h3>
+                <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                  <CategoryIcon className="w-6 h-6 md:w-7 md:h-7 text-primary-500" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-primary-400">{category}</h3>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
                   {categorySkills.map((skill, index) => (
                     <SkillCard key={skill.name} skill={skill} index={index} />
                   ))}
@@ -119,10 +119,10 @@ const Skills = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
-          <h3 className="text-3xl font-bold text-center mb-8 text-primary-100">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <h3 className="text-2xl sm:text-3xl font-bold text-center mb-6 md:mb-8 text-primary-100">Technologies I Work With</h3>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
             {['React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Python', 'TypeScript', 'Django', 'FastAPI', 'Express', 'MongoDB', 'PostgreSQL', 'Redis', 'Docker', 'Kubernetes', 'AWS', 'Git', 'CI/CD', 'REST API', 'GraphQL'].map((tech, index) => (
               <motion.div
                 key={tech}
@@ -130,7 +130,7 @@ const Skills = () => {
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ delay: 1 + index * 0.05, duration: 0.5 }}
                 whileHover={{ scale: 1.1, y: -3 }}
-                className="px-4 py-2 bg-dark-100 border border-primary-500/30 rounded-lg text-primary-100 font-mono text-sm hover:border-primary-500 hover:bg-primary-500/10 transition-all duration-300"
+                className="px-3 py-1.5 md:px-4 md:py-2 bg-dark-100 border border-primary-500/30 rounded-lg text-primary-100 font-mono text-xs md:text-sm hover:border-primary-500 hover:bg-primary-500/10 transition-all duration-300"
               >
                 {tech}
               </motion.div>
@@ -175,16 +175,16 @@ const SkillCard = ({ skill, index }) => {
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.5 }}
       whileHover={{ y: -5, scale: 1.05 }}
-      className="skill-card group relative bg-dark-100 border border-primary-500/20 rounded-xl p-4 hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300"
+      className="skill-card group relative bg-dark-100 border border-primary-500/20 rounded-xl p-3 md:p-4 hover:border-primary-500 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300"
     >
       <div className="flex flex-col items-center text-center">
         {/* Progress Bar */}
-        <div className="w-full mb-3">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-bold text-primary-100">{skill.name}</span>
-            <span className="text-xs font-mono text-primary-400">{count}%</span>
+        <div className="w-full mb-2 md:mb-3">
+          <div className="flex justify-between items-center mb-1.5 md:mb-2">
+            <span className="text-xs sm:text-sm font-bold text-primary-100">{skill.name}</span>
+            <span className="text-[10px] sm:text-xs font-mono text-primary-400">{count}%</span>
           </div>
-          <div className="h-2 bg-dark-50 rounded-full overflow-hidden">
+          <div className="h-1.5 md:h-2 bg-dark-50 rounded-full overflow-hidden">
             <motion.div
               initial={{ width: 0 }}
               animate={isInView ? { width: `${skill.level}%` } : {}}
@@ -197,7 +197,7 @@ const SkillCard = ({ skill, index }) => {
         </div>
         
         {/* Check Icon */}
-        <CheckCircle2 className="w-5 h-5 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
       </div>
     </motion.div>
   )
