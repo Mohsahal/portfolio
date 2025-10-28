@@ -14,10 +14,10 @@ const Projects = () => {
   const projects = [
     {
       title: 'Career Companion System',
-      description: 'Full-stack web application for job seekers using machine learning to recommend personalized career paths and job opportunities based on user profiles and preferences.',
+      description: 'AI-powered career guidance platform using machine learning algorithms to analyze user profiles, skills, and interests. Provides personalized career path recommendations, job matching, and skill gap analysis with predictive analytics.',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-      tags: ['React', 'Node.js', 'ML', 'MongoDB'],
-      category: 'Full Stack',
+      tags: ['Machine Learning', 'Python', 'React', 'TensorFlow', 'scikit-learn'],
+      category: 'AI/ML',
       github: 'https://github.com/Mohsahal',
       live: '#',
     },
@@ -59,7 +59,7 @@ const Projects = () => {
     },
   ]
 
-  const categories = ['All', 'Full Stack', 'Cyber Security']
+  const categories = ['All', 'AI/ML', 'Full Stack', 'Cyber Security']
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter)
 
   useEffect(() => {
