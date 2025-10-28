@@ -22,6 +22,15 @@ const Projects = () => {
       live: '#',
     },
     {
+      title: 'Heart Disease Prediction using Neural Network',
+      description: 'AI-powered heart disease prediction system built using Deep Learning and Neural Networks with an interactive Gradio interface. Predicts heart disease likelihood based on medical attributes including age, cholesterol, blood pressure, and ECG results with high accuracy.',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
+      tags: ['Deep Learning', 'Neural Networks', 'Python', 'Gradio', 'TensorFlow'],
+      category: 'AI/ML',
+      github: 'https://github.com/Mohsahal',
+      live: '#',
+    },
+    {
       title: 'E-Learning Platform',
       description: 'Full-featured MERN stack application with secure authentication, course browsing, video lessons, live classes, certificate generation, progress tracking, and integrated payment gateway. Deployed on Render.',
       image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
