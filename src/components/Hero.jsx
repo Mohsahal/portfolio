@@ -154,7 +154,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.a
+      {/* <motion.a
         href="#about"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -182,7 +182,7 @@ const Hero = () => {
           </div>
           <ArrowDown className="text-primary-500 w-5 h-5 sm:w-6 sm:h-6" />
         </motion.div>
-      </motion.a>
+      </motion.a> */}
     </section>
   );
 };

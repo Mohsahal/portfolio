@@ -8,24 +8,32 @@ gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
   const sectionRef = useRef(null)
-  const isInView = useInView(sectionRef, { once: true, margin: '-100px' })
+  const cardsRef = useRef(null)
+  const isInView = useInView(sectionRef, { once: false, margin: '-50px' })
+  const cardsInView = useInView(cardsRef, { once: false, margin: '-100px' })
 
   useEffect(() => {
-    const cards = sectionRef.current.querySelectorAll('.feature-card')
+    if (!cardsRef.current) return
+    const cards = cardsRef.current.querySelectorAll('.feature-card')
+    if (cards.length === 0) return
     
-    gsap.from(cards, {
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top center',
-        end: 'bottom center',
-        toggleActions: 'play none none reverse',
-      },
-      y: 100,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 1,
-      ease: 'power3.out',
-    })
+    const ctx = gsap.context(() => {
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: cardsRef.current,
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none play reverse',
+        },
+        y: 50,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.8,
+        ease: 'power2.out',
+      })
+    }, cardsRef)
+    
+    return () => ctx.revert()
   }, [])
 
   const features = [
@@ -65,43 +73,41 @@ const About = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 text-gradient">About Me</h2>
           <div className="w-20 sm:w-24 h-1 bg-primary-500 mx-auto mb-6 md:mb-8"></div>
-          <div className="max-w-4xl mx-auto space-y-4 md:space-y-6">
-            {/* <p className="text-lg sm:text-xl md:text-2xl text-primary-100 font-semibold leading-relaxed">
-              Full Stack Developer & Cybersecurity Enthusiast
-            </p> */}
-            <p className="text-sm sm:text-base md:text-lg text-primary-200 leading-relaxed">
-              Currently pursuing <span className="text-primary-400 font-semibold">B.E in Information Science at VTU</span> with a CGPA of <span className="text-primary-400 font-semibold">7.02</span>. 
+          <div className="max-w-4xl mx-auto space-y-5 md:space-y-7">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-100 leading-relaxed font-light">
+              Currently pursuing <span className="text-primary-400 font-bold bg-primary-500/10 px-2 py-1 rounded">B.E in Information Science at VTU</span> with a CGPA of <span className="text-primary-400 font-bold">7.02</span>. 
               I specialize in designing, building, and securing end-to-end web applications using modern technologies like 
               <span className="text-primary-400 font-semibold"> React, Node.js, and the MERN stack</span>.
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-primary-200 leading-relaxed">
-              With expertise in <span className="text-primary-400 font-semibold">web vulnerability assessment, penetration testing, and secure coding practices</span>, 
+            <p className="text-base sm:text-lg md:text-xl text-primary-200 leading-relaxed font-light">
+              With expertise in <span className="text-primary-400 font-semibold bg-primary-500/5 px-1.5 py-0.5 rounded">web vulnerability assessment, penetration testing, and secure coding practices</span>, 
               I ensure robust application defense. Currently gaining hands-on experience as a 
-              <span className="text-primary-400 font-semibold"> Cyber Security Intern at Interns Forge, Bengaluru</span>, 
+              <span className="text-primary-400 font-bold"> Cyber Security Intern at Interns Forge, Bengaluru</span>, 
               working on real-world security challenges and solutions.
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-primary-300 italic">
-              Passionate about writing clean, efficient code and delivering secure, user-friendly solutions.
+            <p className="text-base sm:text-lg md:text-xl text-primary-300 italic font-light border-l-4 border-primary-500 pl-4 py-2">
+              "Passionate about writing clean, efficient code and delivering secure, user-friendly solutions."
             </p>
           </div>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-              className="feature-card bg-dark-50 border border-primary-500/20 rounded-xl p-5 md:p-6 hover:border-primary-500/50 transition-all duration-300 group"
+              initial={{ opacity: 0, y: 30 }}
+              animate={cardsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ delay: index * 0.1, duration: 0.6, ease: 'easeOut' }}
+              whileHover={{ y: -8, scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              className="feature-card bg-dark-50 border border-primary-500/20 rounded-xl p-5 md:p-6 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 group-hover:bg-primary-500/20 transition-all duration-300">
-                <feature.icon className="w-7 h-7 md:w-8 md:h-8 text-primary-500" />
+              <div className="w-14 h-14 md:w-16 md:h-16 bg-primary-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4 group-hover:bg-primary-500/20 group-hover:scale-110 transition-all duration-300">
+                <feature.icon className="w-7 h-7 md:w-8 md:h-8 text-primary-500 group-hover:rotate-12 transition-transform duration-300" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-primary-100 mb-2">{feature.title}</h3>
-              <p className="text-sm md:text-base text-primary-300">{feature.description}</p>
+              <h3 className="text-lg md:text-xl font-bold text-primary-100 mb-2 group-hover:text-primary-400 transition-colors">{feature.title}</h3>
+              <p className="text-sm md:text-base text-primary-300 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

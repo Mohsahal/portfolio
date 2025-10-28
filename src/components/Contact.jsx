@@ -223,7 +223,7 @@ const Contact = () => {
               <div className="text-center">
                 <MapPin className="w-12 h-12 md:w-16 md:h-16 text-primary-500 mx-auto mb-3 md:mb-4" />
                 <p className="text-sm md:text-base text-primary-300">Map Integration</p>
-                <p className="text-primary-400 text-xs sm:text-sm mt-2">San Francisco, CA</p>
+                <p className="text-primary-400 text-xs sm:text-sm mt-2">Kerala, India</p>
               </div>
             </motion.div>
           </motion.div>
