@@ -48,15 +48,15 @@ const Projects = () => {
       github: 'https://github.com/Mohsahal',
       live: '#',
     },
-    {
-      title: 'VAPT Project',
-      description: 'Vulnerability Assessment and Penetration Testing project focused on assessing system security through ethical hacking methodologies. Includes scanning, exploitation, and remediation phases.',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
-      tags: ['Metasploit', 'Burp Suite', 'Nmap', 'Nessus'],
-      category: 'Cyber Security',
-      github: 'https://github.com/Mohsahal',
-      live: '#',
-    },
+    // {
+    //   title: 'VAPT Project',
+    //   description: 'Vulnerability Assessment and Penetration Testing project focused on assessing system security through ethical hacking methodologies. Includes scanning, exploitation, and remediation phases.',
+    //   image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop',
+    //   tags: ['Metasploit', 'Burp Suite', 'Nmap', 'Nessus'],
+    //   category: 'Cyber Security',
+    //   github: 'https://github.com/Mohsahal',
+    //   live: '#',
+    // },
   ]
 
   const categories = ['All', 'AI/ML', 'Full Stack', 'Cyber Security']
