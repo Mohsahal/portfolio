@@ -75,7 +75,7 @@ const About = () => {
           <div className="w-20 sm:w-24 h-1 bg-primary-500 mx-auto mb-6 md:mb-8"></div>
           <div className="max-w-4xl mx-auto space-y-5 md:space-y-7">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-100 leading-relaxed font-light">
-              Currently pursuing <span className="text-primary-400 font-bold bg-primary-500/10 px-2 py-1 rounded">B.E in Information Science at VTU</span> with a CGPA of <span className="text-primary-400 font-bold">7.02</span>. 
+              Currently pursuing <span className="text-primary-400 font-bold bg-primary-500/10 px-2 py-1 rounded">B.E in Information Science at Yenepoya institute of technology</span> with a CGPA of <span className="text-primary-400 font-bold">7.02</span>. 
               I specialize in designing, building, and securing end-to-end web applications using modern technologies like 
               <span className="text-primary-400 font-semibold"> React, Node.js, and the MERN stack</span>.
             </p>
