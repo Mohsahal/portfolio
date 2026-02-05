@@ -31,7 +31,7 @@ const Projects = () => {
       live: '#',
     },
     {
-      title: 'E-Learning Platform',
+      title: 'LMS-Platform',
       description: 'Full-featured MERN stack application with secure authentication, course browsing, video lessons, live classes, certificate generation, progress tracking, and integrated payment gateway. Deployed on Render.',
       image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
       tags: ['MERN', 'Payment Gateway', 'WebRTC', 'Render'],
