@@ -87,9 +87,7 @@ const Hero = () => {
             transition={{ delay: 1.5 }}
             className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-200 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
-            Full Stack Developer specializing in secure web applications with
-            expertise in React, Node.js, and cybersecurity. Building robust,
-            user-friendly solutions with clean code and best practices.
+            Full Stack Developer focused on building and securing web applications using modern full-stack technologies and cybersecurity skills. Experienced in developing robust, user-friendly solutions with secure coding practices, clean architecture, and industry best practices.
           </motion.p>
 
           {/* CTA Buttons */}
