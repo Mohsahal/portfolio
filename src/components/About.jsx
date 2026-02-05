@@ -77,13 +77,13 @@ const About = () => {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-primary-100 leading-relaxed font-light">
               Currently pursuing <span className="text-primary-400 font-bold bg-primary-500/10 px-2 py-1 rounded">B.E in Information Science at Yenepoya institute of technology</span> with a CGPA of <span className="text-primary-400 font-bold">7.02</span>. 
               I specialize in designing, building, and securing end-to-end web applications using modern technologies like 
-              <span className="text-primary-400 font-semibold"> React, Node.js, and the MERN stack</span>.
+              {/* <span className="text-primary-400 font-semibold"> React, Node.js, and the MERN stack</span>. */}
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary-200 leading-relaxed font-light">
               With expertise in <span className="text-primary-400 font-semibold bg-primary-500/5 px-1.5 py-0.5 rounded">web vulnerability assessment, penetration testing, and secure coding practices</span>, 
               I ensure robust application defense. Currently gaining hands-on experience as a 
-              <span className="text-primary-400 font-bold"> Cyber Security Intern at Interns Forge, Bengaluru</span>, 
-              working on real-world security challenges and solutions.
+              {/* <span className="text-primary-400 font-bold"> Cyber Security Intern at Interns Forge, Bengaluru</span>, 
+              working on real-world security challenges and solutions. */}
             </p>
             <p className="text-base sm:text-lg md:text-xl text-primary-300 italic font-light border-l-4 border-primary-500 pl-4 py-2">
               "Passionate about writing clean, efficient code and delivering secure, user-friendly solutions."
