@@ -17,8 +17,8 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
       tags: ['MERN', 'Payment Gateway', 'WebRTC', 'Render'],
       category: 'Full Stack',
-      github: 'https://github.com/bravynex-hue/LMS-platform',
-      live: 'https://bravynex.in',
+      github: 'https://github.com/Mohsahal/E-learn-platform',
+      live: 'https://client-bbyk.onrender.com',
     },
     {
       title: 'Career Companion System',
