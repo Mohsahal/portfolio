@@ -29,15 +29,6 @@ const Projects = () => {
       github: 'https://github.com/Mohsahal/Major-project',
       
     },
-    {
-      title: 'Heart Disease Prediction using Neural Network',
-      description: 'AI-powered heart disease prediction system built using Deep Learning and Neural Networks with an interactive Gradio interface. Predicts heart disease likelihood based on medical attributes including age, cholesterol, blood pressure, and ECG results with high accuracy.',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop',
-      tags: ['Deep Learning', 'Neural Networks', 'Python', 'Gradio', 'TensorFlow'],
-      category: 'AI/ML',
-      github: 'https://github.com/Mohsahal/Heart-Disease-prediction',
-      
-    },
    
     {
       title: 'E-commerce Web Application',
