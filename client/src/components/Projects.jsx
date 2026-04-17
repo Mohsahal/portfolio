@@ -12,8 +12,8 @@ const Projects = () => {
 
   const projects = [
      {
-      title: 'Internship Based LMS-Platform',
-      description: 'Advanced Learning Management System (Bravynex) tailored for professional internships. Features secure multi-role authentication, real-time video streaming with WebRTC, automated progress tracking, and certificate generation with integrated payment gateways for an end-to-end educational experience.',
+      title: 'E-learning LMS-Platform',
+      description: 'Advanced LMS for e-learning with multi-role authentication, progress tracking, certificate generation, and payment integration.',
       image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=600&fit=crop',
       tags: ['MERN', 'Payment Gateway', 'WebRTC', 'Render'],
       category: 'Full Stack',
