@@ -46,6 +46,7 @@ const Projects = () => {
       tags: ['MongoDB', 'Express', 'React', 'Node.js'],
       category: 'Full Stack',
       github: 'https://github.com/Mohsahal/ShoppingCart-MERN',
+      live: 'https://shoppingcart-mern-choi.onrender.com'
       
     },
   ]
