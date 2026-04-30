@@ -27,6 +27,7 @@ const Projects = () => {
       tags: ['Machine Learning', 'Python', 'React', 'TF-IDF + Sentence Transformers'],
       category: 'AI/ML',
       github: 'https://github.com/Mohsahal/Major-project',
+      live: 'https://ai-powered-career-companion-system-1.onrender.com',
       
     },
    
