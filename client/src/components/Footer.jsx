@@ -102,14 +102,6 @@ const Footer = () => {
           <p className="text-xs sm:text-sm md:text-base text-primary-300 text-center md:text-left">
             © {currentYear} DevPortfolio. All rights reserved.
           </p>
-          <motion.p
-            className="text-xs sm:text-sm md:text-base text-primary-300 flex items-center gap-2"
-            whileHover={{ scale: 1.05 }}
-          >
-            Made with{" "}
-            <Heart className="text-primary-500 fill-current" size={14} /> by
-            Mohammed Sahal PK
-          </motion.p>
         </div>
       </div>
     </footer>
